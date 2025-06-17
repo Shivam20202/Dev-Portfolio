@@ -1,0 +1,391 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: 33, 33, 33;
+  --background: 255, 252, 245;
+  --primary: 255, 107, 107;
+  --secondary: 76, 201, 240;
+  --accent: 255, 183, 3;
+  --muted: 247, 247, 247;
+}
+
+.dark {
+  --foreground: 255, 255, 255;
+  --background: 67, 83, 255;
+  --primary: 255, 107, 107;
+  --secondary: 76, 201, 240;
+  --accent: 255, 183, 3;
+  --muted: 86, 100, 210;
+}
+
+* {
+  border-color: #000;
+}
+
+body {
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+  overflow-x: hidden;
+  cursor: none;
+  font-family: var(--font-comic);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.font-sans {
+  font-family: var(--font-comic);
+}
+
+.font-display {
+  font-family: var(--font-bangers);
+  letter-spacing: 0.05em;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-yellow-500 to-cyan-500;
+}
+
+.glass {
+  @apply backdrop-blur-md bg-white/20 border border-white/20 shadow-xl;
+}
+
+.dark .glass {
+  @apply backdrop-blur-md bg-indigo-900/30 border border-white/10 shadow-xl;
+}
+
+.magnetic-button {
+  @apply relative inline-block overflow-hidden transition-all duration-300;
+}
+
+.section-container {
+  @apply relative min-h-screen w-full px-4 md:px-8 lg:px-16 py-24;
+}
+
+.horizontal-section {
+  @apply flex flex-nowrap;
+}
+
+.horizontal-section > * {
+  @apply flex-shrink-0;
+}
+
+/* Custom Scrollbar Design */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #fef3c7 0%, #fed7aa 50%, #fecaca 100%);
+  border-radius: 10px;
+  border: 2px solid #000;
+  box-shadow: inset 2px 2px 0px #000;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #312e81 0%, #581c87 50%, #7c2d12 100%);
+  border: 2px solid #fff;
+  box-shadow: inset 2px 2px 0px #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff6b6b 0%, #feca57 50%, #48cae4 100%);
+  border-radius: 10px;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0px #000;
+  transition: all 0.3s ease;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff6b6b 0%, #feca57 50%, #48cae4 100%);
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 0px #fff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff5252 0%, #ffb74d 50%, #29b6f6 100%);
+  transform: scale(1.1);
+  box-shadow: 3px 3px 0px #000;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  box-shadow: 3px 3px 0px #fff;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #f44336 0%, #ff9800 50%, #2196f3 100%);
+  transform: scale(0.95);
+}
+
+::-webkit-scrollbar-corner {
+  background: #fef3c7;
+  border: 2px solid #000;
+}
+
+.dark ::-webkit-scrollbar-corner {
+  background: #312e81;
+  border: 2px solid #fff;
+}
+
+/* Firefox Scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #ff6b6b #fef3c7;
+}
+
+.dark html {
+  scrollbar-color: #ff6b6b #312e81;
+}
+
+/* Optimized animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes musicPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce 3s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 4s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+.animate-music-pulse {
+  animation: musicPulse 2s ease-in-out infinite;
+}
+
+/* Cartoon elements */
+.cloud {
+  @apply absolute bg-white rounded-full transition-colors duration-1000;
+  box-shadow:
+    10px 10px 0 0 currentColor, 20px 10px 0 0 currentColor, 30px 10px 0 0 currentColor, 40px 10px 0 0 currentColor, 10px 20px 0 0 currentColor,
+    20px 20px 0 0 currentColor, 30px 20px 0 0 currentColor, 40px 20px 0 0 currentColor;
+  height: 20px;
+  width: 50px;
+}
+
+.sun {
+  @apply absolute rounded-full bg-yellow-400;
+  box-shadow: 0 0 50px 20px rgba(255, 214, 0, 0.7);
+}
+
+.cartoon-border {
+  @apply border-4 border-black rounded-xl;
+  box-shadow: 5px 5px 0px #000;
+}
+
+.cartoon-button {
+  @apply font-bold py-2 px-4 border-4 border-black rounded-xl transition-all duration-200;
+  box-shadow: 5px 5px 0px #000;
+}
+
+.cartoon-button:hover {
+  @apply translate-x-1 translate-y-1;
+  box-shadow: 3px 3px 0px #000;
+}
+
+.cartoon-button:active {
+  @apply translate-x-2 translate-y-2;
+  box-shadow: 0px 0px 0px #000;
+}
+
+.cartoon-bg {
+  background-color: #4353ff;
+  background-image: radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.2) 2%, transparent 0%),
+    radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.2) 2%, transparent 0%);
+  background-size: 100px 100px;
+}
+
+.cartoon-card {
+  @apply rounded-xl border-4 border-black bg-white transition-colors duration-500;
+  box-shadow: 8px 8px 0px #000;
+}
+
+.dark .cartoon-card {
+  @apply bg-indigo-800 border-white;
+  box-shadow: 8px 8px 0px #fff;
+}
+
+.cartoon-input {
+  @apply rounded-xl border-4 border-black bg-white px-4 py-2 transition-colors duration-500;
+  box-shadow: 4px 4px 0px #000;
+}
+
+.dark .cartoon-input {
+  @apply bg-indigo-800 border-white;
+  box-shadow: 4px 4px 0px #fff;
+}
+
+.cartoon-input:focus {
+  @apply outline-none border-blue-500;
+  box-shadow: 4px 4px 0px rgb(59, 130, 246);
+}
+
+.dark .cartoon-input:focus {
+  @apply border-cyan-400;
+  box-shadow: 4px 4px 0px rgb(34, 211, 238);
+}
+
+.zigzag {
+  background: linear-gradient(
+      -45deg,
+      transparent 33.333%,
+      rgb(var(--background)) 33.333%,
+      rgb(var(--background)) 66.667%,
+      transparent 66.667%
+    ),
+    linear-gradient(
+      45deg,
+      transparent 33.333%,
+      rgb(var(--background)) 33.333%,
+      rgb(var(--background)) 66.667%,
+      transparent 66.667%
+    );
+  background-size: 20px 40px;
+  height: 20px;
+}
+
+.stars {
+  background-image: radial-gradient(white 1px, transparent 0), radial-gradient(white 1px, transparent 0);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 768px) {
+  .section-container {
+    @apply px-4 py-16;
+  }
+
+  .cartoon-card {
+    box-shadow: 4px 4px 0px #000;
+  }
+
+  .dark .cartoon-card {
+    box-shadow: 4px 4px 0px #fff;
+  }
+
+  .cartoon-button {
+    box-shadow: 3px 3px 0px #000;
+  }
+
+  .cartoon-button:hover {
+    @apply translate-x-0.5 translate-y-0.5;
+    box-shadow: 2px 2px 0px #000;
+  }
+
+  .cartoon-button:active {
+    @apply translate-x-1 translate-y-1;
+    box-shadow: 1px 1px 0px #000;
+  }
+
+  /* Mobile scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+
+/* Theme transition animations */
+.theme-transition {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Improved focus styles */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.dark button:focus-visible,
+.dark a:focus-visible {
+  outline-color: #60a5fa;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
