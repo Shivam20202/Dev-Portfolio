@@ -173,7 +173,7 @@ vercel env add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
 
 ## 📁 Project Structure
 
-\`\`\`
+```
 portfolio/
 ├── app/                    # Next.js app directory
 │   ├── globals.css        # Global styles and animations
@@ -210,7 +210,7 @@ portfolio/
 ├── tailwind.config.ts  # Tailwind CSS configuration
 ├── package.json        # Dependencies and scripts
 └── README.md          # This file
-\`\`\`
+```
 
 ## 🛠️ Technologies Used
 
