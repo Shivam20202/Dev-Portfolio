@@ -66,44 +66,44 @@ A modern, interactive, and cartoon-themed portfolio website showcasing full-stac
 ### Installation
 
 1. **Clone the repository**
-\`\`\`bash
+```
 git clone https://github.com/Shivam20202/Dev-Portfolio.git
 cd portfolio
-\`\`\`
+```
 
 2. **Install dependencies**
-\`\`\`bash
+```
 npm install
 # or
 yarn install
 # or
 pnpm install
-\`\`\`
+```
 
 3. **Add background music**
-\`\`\`bash
+```
 mkdir -p public/music
 # Add your background-music.mp3 file to public/music/
-\`\`\`
+```
 
 4. **Set up environment variables**
-\`\`\`bash
+```
 cp .env.example .env.local
-\`\`\`
+```
 
 Add your Web3Forms access key:
-\`\`\`env
+```env
 NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_access_key_here
-\`\`\`
+```
 
 5. **Run the development server**
-\`\`\`bash
+```
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-\`\`\`
+```
 
 6. **Open your browser**
 Navigate to [http://localhost:3000](http://localhost:3000)
@@ -113,17 +113,17 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 ### Step 1: Prepare Your Repository
 
 1. **Push to GitHub**
-\`\`\`bash
+```
 git add .
 git commit -m "Initial commit"
 git push origin main
-\`\`\`
+```
 
 2. **Ensure music file is included**
-\`\`\`bash
+```
 # Make sure your music file is in the correct location
 ls public/music/background-music.mp3
-\`\`\`
+```
 
 ### Step 2: Deploy to Vercel
 
@@ -150,24 +150,23 @@ ls public/music/background-music.mp3
 #### Option B: Vercel CLI
 
 1. **Install Vercel CLI**
-\`\`\`bash
+```
 npm i -g vercel
-\`\`\`
+```
 
 2. **Login to Vercel**
-\`\`\`bash
+```
 vercel login
-\`\`\`
+```
 
 3. **Deploy**
-\`\`\`bash
+```
 vercel
-\`\`\`
-
+```
 4. **Add environment variables**
-\`\`\`bash
+```
 vercel env add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
-\`\`\`
+```
 
 
 
